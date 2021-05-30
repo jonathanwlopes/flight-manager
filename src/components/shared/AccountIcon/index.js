@@ -6,8 +6,8 @@ export const AccountIcon = () => {
 
   return (
     <S.Circle>
-      <span>{frist}</span>
-      <span>{second}</span>
+      <S.NameInitials>{frist}</S.NameInitials>
+      <S.NameInitials>{second}</S.NameInitials>
     </S.Circle>
   );
 };

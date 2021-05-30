@@ -5,5 +5,5 @@ export const Container = styled.div`
   height: 100vh;
   max-width: 375px;
   max-height: 812px;
-  background-color: red;
+  background: #f2f2f2 0% 0% no-repeat padding-box;
 `;

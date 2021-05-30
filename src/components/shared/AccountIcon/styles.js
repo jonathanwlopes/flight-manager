@@ -8,11 +8,12 @@ export const Circle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #696969;
   font-weight: 700;
   &:hover {
     cursor: pointer;
   }
 `;
 
-export const Name = styled.span``;
+export const NameInitials = styled.span`
+  color: #696969;
+`;

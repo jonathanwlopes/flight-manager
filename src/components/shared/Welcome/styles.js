@@ -9,7 +9,10 @@ export const Container = styled.div`
 export const WrapperUser = styled.div`
   width: 50%;
   height: 100%;
-  padding: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const Title = styled.h3`
@@ -26,8 +29,8 @@ export const User = styled.h2`
 export const WrapperAccount = styled.div`
   width: 20%;
   height: 100%;
-  padding: 1rem;
+  margin-top: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
