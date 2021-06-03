@@ -3,6 +3,16 @@ import { IoNotifications } from "react-icons/io5";
 import { AccountIcon } from "../AccountIcon";
 import * as S from "./styles";
 
+fetch("http://localhost:3333/users", {
+  headers: { "content-type": "application/json" },
+  mode: 'no-cors'
+})
+  .then((res) => res.json())
+  .then((data) => {
+    console.log((data));
+  })
+  .catch((e) => console.log(e));
+
 const user = dbApp.getUserById(1);
 
 export const Welcome = () => {
