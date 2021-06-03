@@ -1,6 +1,9 @@
 import express from "express";
 
 const app = express();
+const port = process.env.PORT || 3333;
+
+app.listen(porta);
 
 const dbApp = {
   userList: [
@@ -41,6 +44,6 @@ app.get("/users", (req, res) => {
   return res.send([...dbApp.userList]);
 });
 
-app.listen(3333, () => {
+app.listen(port, () => {
   console.log("Ouvindo servidor");
 });
