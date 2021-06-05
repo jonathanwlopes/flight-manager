@@ -1,28 +1,32 @@
-import dbApp from "../../../modules/data/index.js";
 import { IoNotifications } from "react-icons/io5";
 import { AccountIcon } from "../AccountIcon";
 import * as S from "./styles";
-
-fetch("http://localhost:3333/users", {
-  headers: { "content-type": "application/json" },
-  mode: 'no-cors'
-})
-  .then((res) => res.json())
-  .then((data) => {
-    console.log((data));
-  })
-  .catch((e) => console.log(e));
-
-const user = dbApp.getUserById(1);
+import React, { useEffect, useState } from "react";
+import userLogged from "../../../modules/login";
 
 export const Welcome = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    async function getItems(userId = 1) {
+      try {
+        const logged = await userLogged(userId);
+        setUser(logged);
+      } catch (error) {
+        alert("Ocorreu um erro ao buscar o usuario");
+      }
+    }
+
+    getItems();
+  }, []);
+
   return (
-    <S.Container className="welcome">
-      <S.WrapperUser className="wrapper-user">
+    <S.Container>
+      <S.WrapperUser>
         <S.Title>Boa tarde</S.Title>
-        <S.User>{user.name}</S.User>
+        <S.User>{user ? user.name : "Loading..."}</S.User>
       </S.WrapperUser>
-      <S.WrapperAccount className="wrapper-account">
+      <S.WrapperAccount>
         <IoNotifications color="#fff" size="22px" cursor="pointer" />
         <AccountIcon />
       </S.WrapperAccount>

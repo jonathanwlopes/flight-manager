@@ -6,4 +6,6 @@ export const Container = styled.div`
   max-width: 375px;
   max-height: 812px;
   background: #f2f2f2 0% 0% no-repeat padding-box;
+  display: flex;
+  flex-direction: column;
 `;
